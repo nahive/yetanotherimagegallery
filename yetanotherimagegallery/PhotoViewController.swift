@@ -21,13 +21,8 @@ class PhotoViewController: UIViewController {
         return view
     }()
     
-    private let scrollView: UIScrollView = {
+    private lazy var scrollView: UIScrollView = {
         let view = UIScrollView()
-        return view
-    }()
-    
-    private lazy var contentView: UIView = {
-        let view = UIView()
         
         let recognizer = UITapGestureRecognizer(target: self, action: #selector(backgroundTapped))
         view.addGestureRecognizer(recognizer)
@@ -35,12 +30,19 @@ class PhotoViewController: UIViewController {
         return view
     }()
     
-    private let photoImageView: UIImageView = {
+    private let contentView: UIView = {
+        let view = UIView()
+        return view
+    }()
+    
+    private lazy var photoImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
         imageView.layer.shadowColor = UIColor.black.cgColor
         imageView.layer.shadowOpacity = 1.0
         imageView.layer.shadowRadius = 30.0
+        imageView.isUserInteractionEnabled = true
+        imageView.addGestureRecognizer(UIPinchGestureRecognizer(target: self, action: #selector(photoImageViewPinched(recognizer:))))
         return imageView
     }()
     
@@ -90,9 +92,8 @@ class PhotoViewController: UIViewController {
     }()
     
     private lazy var shareButton: UIButton = {
-        let button = UIButton()
-        button.titleLabel?.font = .boldSystemFont(ofSize: 12)
-        button.setTitle("S H A R E", for: .normal)
+        let button = UIButton(type: .system)
+        button.setTitle("Share", for: .normal)
         button.setTitleColor(.darkGray, for: .normal)
         button.addTarget(self, action: #selector(shareButtonTapped(sender:)), for: .touchUpInside)
         return button
@@ -140,8 +141,14 @@ class PhotoViewController: UIViewController {
             make.width.equalTo(scrollView.snp.width)
         }
         
+        shareButton.snp.makeConstraints { (make) in
+            make.right.equalTo(contentView.snp.right).offset(-16)
+            make.top.equalTo(contentView.snp.top).offset(20)
+            make.height.equalTo(44)
+        }
+        
         photoImageView.snp.makeConstraints { (make) in
-            make.top.equalTo(contentView.snp.top).offset(44)
+            make.top.equalTo(contentView.snp.top).offset(64)
             make.left.equalTo(contentView.snp.left).offset(16)
             make.right.equalTo(contentView.snp.right).offset(-16)
             make.height.equalTo(contentView.snp.width).offset(32).multipliedBy(0.6)
@@ -175,13 +182,7 @@ class PhotoViewController: UIViewController {
             make.top.equalTo(publishDateLabel.snp.bottom).offset(8)
             make.left.equalTo(contentView.snp.left).offset(16)
             make.right.equalTo(contentView.snp.right).offset(-16)
-            make.bottom.equalTo(shareButton.snp.top).offset(-16)
-        }
-        
-        shareButton.snp.makeConstraints { (make) in
-            make.right.equalTo(contentView.snp.right).offset(-16)
             make.bottom.equalTo(contentView.snp.bottom).offset(-16)
-            make.height.equalTo(44)
         }
     }
     
@@ -216,6 +217,22 @@ class PhotoViewController: UIViewController {
         guard let image = photoImageView.image else { return }
         let controller = UIActivityViewController(activityItems: [image], applicationActivities: nil)
         present(controller, animated: true, completion: nil)
+    }
+    
+    private var startingScale: CGFloat = 0.0
+    private dynamic func photoImageViewPinched(recognizer: UIPinchGestureRecognizer) {
+        switch recognizer.state {
+        case .possible: break
+        case .began:
+            startingScale = recognizer.scale/4
+        case .changed:
+            let scale = 1 - startingScale + recognizer.scale/4
+            photoImageView.transform = CGAffineTransform(scaleX: scale, y: scale)
+        case .ended, .cancelled, .failed:
+            UIView.animate(withDuration: 0.3, delay: 0.0, usingSpringWithDamping: 0.5, initialSpringVelocity: 1.0, options: .curveEaseOut, animations: {
+                self.photoImageView.transform = .identity
+            }, completion: nil)
+        }
     }
     
     // MARK: helpers

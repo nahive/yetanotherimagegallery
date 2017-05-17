@@ -24,6 +24,10 @@ class GalleryViewController: UIViewController {
     
     private lazy var searchBar: UISearchBar = {
         let searchBar = UISearchBar()
+        searchBar.placeholder = "Search for tags separated by comma"
+        searchBar.keyboardType = .webSearch
+        searchBar.returnKeyType = .search
+        searchBar.delegate = self
         return searchBar
     }()
     
@@ -33,6 +37,7 @@ class GalleryViewController: UIViewController {
         collectionView.dataSource = (self.presenter as? UICollectionViewDataSource)
         collectionView.delegate = self
         collectionView.backgroundColor = .groupTableViewBackground
+        collectionView.contentInset = UIEdgeInsets(top: 44, left: 0, bottom: 0, right: 0)
         return collectionView
     }()
     
@@ -127,7 +132,7 @@ extension GalleryViewController: GalleryViewType {
 }
 
 // MARK: UICollectionViewDelegate 
-extension GalleryViewController: UICollectionViewDelegateFlowLayout {
+extension GalleryViewController: UICollectionViewDelegateFlowLayout {    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         presenter.presentPhoto(at: indexPath)
     }
@@ -147,5 +152,21 @@ extension GalleryViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 0
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        view.endEditing(true)
+    }
+}
+
+// MARK: UISearchBarDelegate 
+extension GalleryViewController: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        presenter.fetchPhotos(tags: searchBar.text)
+        view.endEditing(true)
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchText == "" { presenter.fetchPhotos(tags: nil) }
     }
 }

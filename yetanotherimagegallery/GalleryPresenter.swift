@@ -65,7 +65,8 @@ extension GalleryPresenter: GalleryPresenterType {
             case .success(let photos):
                 self?.photos = photos
                 self?.view.presentPhotos()
-            case .failure(error: let error): self?.view.present(error: error)
+            case .failure:
+                self?.view.present(error: "Something went terribly wrong while fetching latest photos.")
             }
         }
     }
@@ -110,6 +111,4 @@ extension GalleryPresenter: UICollectionViewDataSource {
         cell.configure(photo: photos[indexPath.item])
         return cell
     }
-    
-
 }

@@ -11,27 +11,36 @@ import UIKit
 extension UIViewController {
     func present(error: String) {
         let backgroundView = UIVisualEffectView(effect: UIBlurEffect(style: .dark))
-        backgroundView.center = view.center
-        backgroundView.frame.size = CGSize(width: 200, height: 200)
+        backgroundView.frame.size = CGSize(width: 150, height: 150)
+        backgroundView.center = UIApplication.shared.keyWindow?.center ?? .zero
         backgroundView.layer.masksToBounds = true
         backgroundView.layer.cornerRadius = 8
         backgroundView.alpha = 0
         
         let label = UILabel()
-        label.frame = backgroundView.bounds
+        label.text = error
+        label.frame = backgroundView.frame
         label.textColor = .white
-        label.font = .boldSystemFont(ofSize: 14)
+        label.font = .boldSystemFont(ofSize: 16)
         label.numberOfLines = 0
+        label.textAlignment = .center
+        label.alpha = 0
         
-        backgroundView.addSubview(label)
+        // Added to keyWindow, so it overlays every view in app
         UIApplication.shared.keyWindow?.addSubview(backgroundView)
+        UIApplication.shared.keyWindow?.addSubview(label)
         
         UIView.animate(withDuration: 0.3, delay: 0.0, options: .curveEaseIn, animations: {
              backgroundView.alpha = 1.0
+            label.alpha = 1.0
         }, completion: nil)
         
-        UIView.animate(withDuration: 0.3, delay: 5.0, options: .curveEaseIn, animations: { 
+        UIView.animate(withDuration: 0.3, delay: 3.0, options: .curveEaseIn, animations: {
             backgroundView.alpha = 0.0
-        }) { _ in  backgroundView.removeFromSuperview() }
+            label.alpha = 0.0
+        }) { _ in
+            backgroundView.removeFromSuperview()
+            label.removeFromSuperview()
+        }
     }
 }
