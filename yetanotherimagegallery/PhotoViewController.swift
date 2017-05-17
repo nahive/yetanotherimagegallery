@@ -52,14 +52,6 @@ class PhotoViewController: UIViewController {
         return label
     }()
     
-    private let descriptionLabel: UILabel = {
-        let label = UILabel()
-        label.textColor = .black
-        label.font = .systemFont(ofSize: 12)
-        label.numberOfLines = 0
-        return label
-    }()
-    
     private let tagsLabel: UILabel = {
         let label = UILabel()
         label.textColor = .darkGray
@@ -127,7 +119,6 @@ class PhotoViewController: UIViewController {
         scrollView.addSubview(contentView)
         contentView.addSubview(photoImageView)
         contentView.addSubview(titleLabel)
-        contentView.addSubview(descriptionLabel)
         contentView.addSubview(tagsLabel)
         contentView.addSubview(takenDateLabel)
         contentView.addSubview(publishDateLabel)
@@ -162,14 +153,8 @@ class PhotoViewController: UIViewController {
             make.right.equalTo(contentView.snp.right).offset(-16)
         }
         
-        descriptionLabel.snp.makeConstraints { (make) in
-            make.top.equalTo(titleLabel.snp.bottom).offset(8)
-            make.left.equalTo(contentView.snp.left).offset(16)
-            make.right.equalTo(contentView.snp.right).offset(-16)
-        }
-        
         tagsLabel.snp.makeConstraints { (make) in
-            make.top.equalTo(descriptionLabel.snp.bottom).offset(8)
+            make.top.equalTo(titleLabel.snp.bottom).offset(8)
             make.left.equalTo(contentView.snp.left).offset(16)
             make.right.equalTo(contentView.snp.right).offset(-16)
         }
@@ -210,7 +195,6 @@ class PhotoViewController: UIViewController {
         
         photoImageView.set(url: photo.imageURL)
         titleLabel.text = photo.title ?? "Unavailable"
-        descriptionLabel.text = photo.description ?? "Unavailable"
         tagsLabel.text = photo.tags ?? "Unavailable"
         takenDateLabel.text = "Taken \(photo.takenDate?.literal ?? "unknown")"
         publishDateLabel.text = "Uploaded \(photo.publishDate?.ago ?? "unkown time") ago"
