@@ -37,6 +37,10 @@ extension MainWorkflow: MainWorkflowType {
     func presentPhoto(sender: ViewType, photo: Photo) {
         // Same as here.
         let controller = container.resolve(PhotoViewType.self)!
-        sender.push(viewType: controller, animated: true)
+        controller.controller?.modalTransitionStyle = .crossDissolve
+        controller.controller?.modalPresentationStyle = .overCurrentContext
+        // Pass photo from previous controller to details.
+        controller.presenter.photo = photo
+        sender.present(viewType: controller, animated: true, completion: nil)
     }
 }

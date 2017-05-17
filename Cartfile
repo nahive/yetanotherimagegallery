@@ -7,6 +7,9 @@ github "SnapKit/SnapKit"
 #networking
 github "Alamofire/Alamofire"
 
+#imagecache
+github "onevcat/Kingfisher"
+
 #json replacement until swift4
 github "delba/JASON"
 

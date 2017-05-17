@@ -12,7 +12,7 @@ import SnapKit
 protocol GalleryViewType: ViewType {
     var presenter: GalleryPresenterType! { get set }
     
-    func present(photos: [Photo])
+    func presentPhotos()
     func present(error: String)
     func presentIndicator()
     func hideIndicator()
@@ -27,9 +27,18 @@ class GalleryViewController: UIViewController {
         return searchBar
     }()
     
-    private lazy var collectionView: UICollectionView = {
-        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: GalleryCollectionLayout())
+    fileprivate lazy var collectionView: UICollectionView = {
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
+        collectionView.register(GalleryCollectionCell.self, forCellWithReuseIdentifier: GalleryCollectionCell.identifier)
+        collectionView.dataSource = (self.presenter as? UICollectionViewDataSource)
+        collectionView.delegate = self
+        collectionView.backgroundColor = .groupTableViewBackground
         return collectionView
+    }()
+    
+    private lazy var sortNavigationButton: UIBarButtonItem = {
+        let item = UIBarButtonItem(title: "Filter", style: .plain, target: self, action: #selector(sortButtonTapped(sender:)))
+        return item
     }()
     
     // MARK: init
@@ -49,6 +58,8 @@ class GalleryViewController: UIViewController {
     
     private func setupView() {
         navigationItem.title = "Yet another photo app"
+        navigationController?.navigationBar.isTranslucent = true
+        navigationItem.rightBarButtonItem = sortNavigationButton
     }
     
     private func setupSubviews() {
@@ -58,10 +69,9 @@ class GalleryViewController: UIViewController {
     
     private func setupConstraints() {
         searchBar.snp.makeConstraints { (make) in
-            make.top.equalTo(view.snp.top)
+            make.top.equalTo(view.snp.top).offset(64)
             make.right.equalTo(view.snp.right)
             make.left.equalTo(view.snp.left)
-            make.height.equalTo(64)
         }
         
         collectionView.snp.makeConstraints { (make) in
@@ -70,8 +80,32 @@ class GalleryViewController: UIViewController {
     }
     
     // MARK: user actions
-    private dynamic func buttonTapped(sender: UIButton) {
-        presenter.presentPhoto(at: IndexPath(item: 0, section: 0))
+    
+    private dynamic func sortButtonTapped(sender: UIBarButtonItem) {
+        presentSortTypeMenu()
+    }
+    
+    private func presentSortTypeMenu() {
+        // this is a kinda weird solution to make sure all cases in enum are presented
+        let controller = UIAlertController(title: "Sort by", message: nil, preferredStyle: .actionSheet)
+        GallerySortType.all.forEach { item in
+            controller.addAction(UIAlertAction(title: item.description, style: .default, handler: { [weak self] action in
+                self?.presentSortOptionsMenu(with: item)
+            }))
+        }
+        controller.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        present(controller, animated: true)
+    }
+    
+    private func presentSortOptionsMenu(with type: GallerySortType) {
+        let controller = UIAlertController(title: "Sort", message: nil, preferredStyle: .actionSheet)
+        GallerySortOptions.all.forEach { item in
+            controller.addAction(UIAlertAction(title: item.description, style: .default, handler: { [weak self] action in
+                self?.presenter.sortPhotos(by: type, options: item)
+            }))
+        }
+        controller.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        present(controller, animated: true)
     }
     
     // MARK: helpers
@@ -79,12 +113,8 @@ class GalleryViewController: UIViewController {
 
 // MARK: GalleryViewType
 extension GalleryViewController: GalleryViewType {
-    func present(photos: [Photo]) {
-        
-    }
-    
-    func present(error: String) {
-        
+    func presentPhotos() {
+        collectionView.reloadData()
     }
     
     func presentIndicator() {
@@ -93,5 +123,29 @@ extension GalleryViewController: GalleryViewType {
     
     func hideIndicator() {
         
+    }
+}
+
+// MARK: UICollectionViewDelegate 
+extension GalleryViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        presenter.presentPhoto(at: indexPath)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let size = collectionView.bounds.size.width/3
+        return CGSize(width: size, height: size)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return .zero
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
     }
 }

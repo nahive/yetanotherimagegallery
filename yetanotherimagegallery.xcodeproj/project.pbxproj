@@ -31,7 +31,12 @@
 		4C08B8981ECCA83C0066C5CA /* MainAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C08B8971ECCA83C0066C5CA /* MainAssembly.swift */; };
 		4C08B89A1ECCA8700066C5CA /* ServicesUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C08B8991ECCA8700066C5CA /* ServicesUtilities.swift */; };
 		4C08B89D1ECCAEE50066C5CA /* ViewType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C08B89C1ECCAEE50066C5CA /* ViewType.swift */; };
-		4C08B89F1ECCBDA30066C5CA /* GalleryCollectionLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C08B89E1ECCBDA30066C5CA /* GalleryCollectionLayout.swift */; };
+		4C08B8A21ECCD2460066C5CA /* GalleryCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C08B8A11ECCD2460066C5CA /* GalleryCollectionCell.swift */; };
+		4C08B8A61ECCD4980066C5CA /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C08B8A51ECCD4980066C5CA /* Kingfisher.framework */; };
+		4C08B8A71ECCD4A40066C5CA /* Kingfisher.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4C08B8A51ECCD4980066C5CA /* Kingfisher.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4C08B8A91ECCD4E60066C5CA /* UIImageView+Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C08B8A81ECCD4E60066C5CA /* UIImageView+Cache.swift */; };
+		4C08B8AB1ECCF0BF0066C5CA /* Date+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C08B8AA1ECCF0BF0066C5CA /* Date+Utilities.swift */; };
+		4C08B8AF1ECCFDB70066C5CA /* UIViewController+Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C08B8AE1ECCFDB70066C5CA /* UIViewController+Error.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +56,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				4C08B8A71ECCD4A40066C5CA /* Kingfisher.framework in CopyFiles */,
 				4C08B8801ECCA5F70066C5CA /* Alamofire.framework in CopyFiles */,
 				4C08B8811ECCA5F70066C5CA /* JASON.framework in CopyFiles */,
 				4C08B8821ECCA5F70066C5CA /* SnapKit.framework in CopyFiles */,
@@ -96,7 +102,11 @@
 		4C08B8971ECCA83C0066C5CA /* MainAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainAssembly.swift; sourceTree = "<group>"; };
 		4C08B8991ECCA8700066C5CA /* ServicesUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServicesUtilities.swift; sourceTree = "<group>"; };
 		4C08B89C1ECCAEE50066C5CA /* ViewType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewType.swift; sourceTree = "<group>"; };
-		4C08B89E1ECCBDA30066C5CA /* GalleryCollectionLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GalleryCollectionLayout.swift; sourceTree = "<group>"; };
+		4C08B8A11ECCD2460066C5CA /* GalleryCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GalleryCollectionCell.swift; sourceTree = "<group>"; };
+		4C08B8A51ECCD4980066C5CA /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
+		4C08B8A81ECCD4E60066C5CA /* UIImageView+Cache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Cache.swift"; sourceTree = "<group>"; };
+		4C08B8AA1ECCF0BF0066C5CA /* Date+Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Utilities.swift"; sourceTree = "<group>"; };
+		4C08B8AE1ECCFDB70066C5CA /* UIViewController+Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Error.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +114,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C08B8A61ECCD4980066C5CA /* Kingfisher.framework in Frameworks */,
 				4C08B8771ECCA3C30066C5CA /* Alamofire.framework in Frameworks */,
 				4C08B8781ECCA3C30066C5CA /* JASON.framework in Frameworks */,
 				4C08B8791ECCA3C30066C5CA /* SnapKit.framework in Frameworks */,
@@ -235,6 +246,7 @@
 		4C08B8721ECCA3C30066C5CA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4C08B8A51ECCD4980066C5CA /* Kingfisher.framework */,
 				4C08B87B1ECCA5DC0066C5CA /* Nimble.framework */,
 				4C08B87C1ECCA5DC0066C5CA /* Quick.framework */,
 				4C08B8731ECCA3C30066C5CA /* Alamofire.framework */,
@@ -248,9 +260,9 @@
 		4C08B8871ECCA7F60066C5CA /* Gallery */ = {
 			isa = PBXGroup;
 			children = (
-				4C08B89E1ECCBDA30066C5CA /* GalleryCollectionLayout.swift */,
 				4C08B8891ECCA8110066C5CA /* GalleryPresenter.swift */,
 				4C08B88A1ECCA8110066C5CA /* GalleryViewController.swift */,
+				4C08B8A11ECCD2460066C5CA /* GalleryCollectionCell.swift */,
 			);
 			name = Gallery;
 			sourceTree = "<group>";
@@ -268,6 +280,9 @@
 			isa = PBXGroup;
 			children = (
 				4C08B89C1ECCAEE50066C5CA /* ViewType.swift */,
+				4C08B8A81ECCD4E60066C5CA /* UIImageView+Cache.swift */,
+				4C08B8AA1ECCF0BF0066C5CA /* Date+Utilities.swift */,
+				4C08B8AE1ECCFDB70066C5CA /* UIViewController+Error.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -379,17 +394,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C08B89A1ECCA8700066C5CA /* ServicesUtilities.swift in Sources */,
+				4C08B8A21ECCD2460066C5CA /* GalleryCollectionCell.swift in Sources */,
 				4C08B8941ECCA82F0066C5CA /* Photo.swift in Sources */,
 				4C08B8981ECCA83C0066C5CA /* MainAssembly.swift in Sources */,
-				4C08B89F1ECCBDA30066C5CA /* GalleryCollectionLayout.swift in Sources */,
 				4C08B88C1ECCA8110066C5CA /* GalleryViewController.swift in Sources */,
 				4C08B88F1ECCA8180066C5CA /* PhotoPresenter.swift in Sources */,
+				4C08B8AF1ECCFDB70066C5CA /* UIViewController+Error.swift in Sources */,
+				4C08B8AB1ECCF0BF0066C5CA /* Date+Utilities.swift in Sources */,
 				4C08B89D1ECCAEE50066C5CA /* ViewType.swift in Sources */,
 				4C08B8921ECCA8270066C5CA /* FlickrService.swift in Sources */,
 				4C08B84B1ECCA1C10066C5CA /* AppDelegate.swift in Sources */,
 				4C08B8961ECCA8360066C5CA /* MainWorkflow.swift in Sources */,
 				4C08B88B1ECCA8110066C5CA /* GalleryPresenter.swift in Sources */,
 				4C08B8901ECCA8180066C5CA /* PhotoViewController.swift in Sources */,
+				4C08B8A91ECCD4E60066C5CA /* UIImageView+Cache.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

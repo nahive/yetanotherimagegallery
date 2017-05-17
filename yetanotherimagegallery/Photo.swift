@@ -10,7 +10,10 @@ import JASON
 
 class Photo {
     var title: String?
-    var description: String?
+    
+    // as it turned out - description in flickr is some random html
+    // so I made it private just to store it, but don't display it
+    private var description: String?
     
     var author: String?
     var authorId: String?
@@ -19,6 +22,7 @@ class Photo {
     var publishDate: Date?
     
     var imageURL: URL?
+    var imageDate: Data?
     var url: URL?
     
     // those will be hold in string, split by comma
@@ -38,7 +42,7 @@ class Photo {
         self.url = url(from: json["link"].string)
         
         // as in task desc - convert tags to comma split
-        self.tags = json["tags"].string?.components(separatedBy: " ").joined(separator: ",")
+        self.tags = json["tags"].string?.components(separatedBy: " ").joined(separator: ", ")
     }
     
     // MARK: parsing helper functions
@@ -46,7 +50,7 @@ class Photo {
     private func date(from string: String?) -> Date? {
         guard let string = string else { return nil }
         let formatter = DateFormatter()
-        formatter.dateFormat = "YYYY-MM-DDTHH:MM:SSZ"
+        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
         return formatter.date(from: string)
     }
     
