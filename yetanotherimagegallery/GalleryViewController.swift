@@ -118,6 +118,11 @@ class GalleryViewController: UIViewController {
 
 // MARK: GalleryViewType
 extension GalleryViewController: GalleryViewType {
+    func present(error: String) {
+        alert(message: error)
+    }
+    
+    
     func presentPhotos() {
         collectionView.reloadData()
     }

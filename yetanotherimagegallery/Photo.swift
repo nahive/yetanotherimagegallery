@@ -22,7 +22,6 @@ class Photo {
     var publishDate: Date?
     
     var imageURL: URL?
-    var imageDate: Data?
     var url: URL?
     
     // those will be hold in string, split by comma

@@ -9,7 +9,7 @@
 import UIKit
 
 extension UIViewController {
-    func present(error: String) {
+    func alert(message: String) {
         let backgroundView = UIVisualEffectView(effect: UIBlurEffect(style: .dark))
         backgroundView.frame.size = CGSize(width: 150, height: 150)
         backgroundView.center = UIApplication.shared.keyWindow?.center ?? .zero
@@ -18,7 +18,7 @@ extension UIViewController {
         backgroundView.alpha = 0
         
         let label = UILabel()
-        label.text = error
+        label.text = message
         label.frame = backgroundView.frame
         label.textColor = .white
         label.font = .boldSystemFont(ofSize: 16)

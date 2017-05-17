@@ -36,7 +36,7 @@
 		4C08B8A71ECCD4A40066C5CA /* Kingfisher.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4C08B8A51ECCD4980066C5CA /* Kingfisher.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4C08B8A91ECCD4E60066C5CA /* UIImageView+Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C08B8A81ECCD4E60066C5CA /* UIImageView+Cache.swift */; };
 		4C08B8AB1ECCF0BF0066C5CA /* Date+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C08B8AA1ECCF0BF0066C5CA /* Date+Utilities.swift */; };
-		4C08B8AF1ECCFDB70066C5CA /* UIViewController+Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C08B8AE1ECCFDB70066C5CA /* UIViewController+Error.swift */; };
+		4C08B8AF1ECCFDB70066C5CA /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C08B8AE1ECCFDB70066C5CA /* UIViewController+Alert.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,7 +106,7 @@
 		4C08B8A51ECCD4980066C5CA /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
 		4C08B8A81ECCD4E60066C5CA /* UIImageView+Cache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Cache.swift"; sourceTree = "<group>"; };
 		4C08B8AA1ECCF0BF0066C5CA /* Date+Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Utilities.swift"; sourceTree = "<group>"; };
-		4C08B8AE1ECCFDB70066C5CA /* UIViewController+Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Error.swift"; sourceTree = "<group>"; };
+		4C08B8AE1ECCFDB70066C5CA /* UIViewController+Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -282,7 +282,7 @@
 				4C08B89C1ECCAEE50066C5CA /* ViewType.swift */,
 				4C08B8A81ECCD4E60066C5CA /* UIImageView+Cache.swift */,
 				4C08B8AA1ECCF0BF0066C5CA /* Date+Utilities.swift */,
-				4C08B8AE1ECCFDB70066C5CA /* UIViewController+Error.swift */,
+				4C08B8AE1ECCFDB70066C5CA /* UIViewController+Alert.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -399,7 +399,7 @@
 				4C08B8981ECCA83C0066C5CA /* MainAssembly.swift in Sources */,
 				4C08B88C1ECCA8110066C5CA /* GalleryViewController.swift in Sources */,
 				4C08B88F1ECCA8180066C5CA /* PhotoPresenter.swift in Sources */,
-				4C08B8AF1ECCFDB70066C5CA /* UIViewController+Error.swift in Sources */,
+				4C08B8AF1ECCFDB70066C5CA /* UIViewController+Alert.swift in Sources */,
 				4C08B8AB1ECCF0BF0066C5CA /* Date+Utilities.swift in Sources */,
 				4C08B89D1ECCAEE50066C5CA /* ViewType.swift in Sources */,
 				4C08B8921ECCA8270066C5CA /* FlickrService.swift in Sources */,

@@ -10,6 +10,8 @@ import UIKit
 
 protocol PhotoViewType: ViewType {
     var presenter: PhotoPresenterType! { get set }
+    
+    func present(message: String)
 }
 
 class PhotoViewController: UIViewController {
@@ -91,6 +93,14 @@ class PhotoViewController: UIViewController {
         return label
     }()
     
+    private lazy var saveButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle("Save", for: .normal)
+        button.setTitleColor(.darkGray, for: .normal)
+        button.addTarget(self, action: #selector(saveButtonTapped(sender:)), for: .touchUpInside)
+        return button
+    }()
+    
     private lazy var shareButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Share", for: .normal)
@@ -125,6 +135,7 @@ class PhotoViewController: UIViewController {
         contentView.addSubview(publishDateLabel)
         contentView.addSubview(urlLabel)
         contentView.addSubview(shareButton)
+        contentView.addSubview(saveButton)
     }
     
     private func setupConstraints() {
@@ -139,6 +150,12 @@ class PhotoViewController: UIViewController {
         contentView.snp.makeConstraints { (make) in
             make.edges.equalTo(scrollView.snp.edges)
             make.width.equalTo(scrollView.snp.width)
+        }
+        
+        saveButton.snp.makeConstraints { (make) in
+            make.right.equalTo(shareButton.snp.left).offset(-16)
+            make.top.equalTo(contentView.snp.top).offset(20)
+            make.height.equalTo(44)
         }
         
         shareButton.snp.makeConstraints { (make) in
@@ -209,9 +226,12 @@ class PhotoViewController: UIViewController {
     }
     
     private dynamic func urlTapped() {
-        guard let url = presenter.photo.url else { return }
-        UIApplication.shared.open(url)
+        presenter.open(url: presenter.photo.url)
     }
+    
+    private dynamic func saveButtonTapped(sender: UIImage) {
+       presenter.save(photo: photoImageView.image)
+    }   
     
     private dynamic func shareButtonTapped(sender: UIImage) {
         guard let image = photoImageView.image else { return }
@@ -240,5 +260,7 @@ class PhotoViewController: UIViewController {
 
 // MARK: PhotoViewType
 extension PhotoViewController: PhotoViewType {
-    
+    func present(message: String) {
+        alert(message: message)
+    }
 }
