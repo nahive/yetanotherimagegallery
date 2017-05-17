@@ -15,14 +15,22 @@
 		4C08B8781ECCA3C30066C5CA /* JASON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C08B8741ECCA3C30066C5CA /* JASON.framework */; };
 		4C08B8791ECCA3C30066C5CA /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C08B8751ECCA3C30066C5CA /* SnapKit.framework */; };
 		4C08B87A1ECCA3C30066C5CA /* Swinject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C08B8761ECCA3C30066C5CA /* Swinject.framework */; };
-		4C08B87D1ECCA5DC0066C5CA /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C08B87B1ECCA5DC0066C5CA /* Nimble.framework */; };
-		4C08B87E1ECCA5DC0066C5CA /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C08B87C1ECCA5DC0066C5CA /* Quick.framework */; };
 		4C08B8801ECCA5F70066C5CA /* Alamofire.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4C08B8731ECCA3C30066C5CA /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4C08B8811ECCA5F70066C5CA /* JASON.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4C08B8741ECCA3C30066C5CA /* JASON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4C08B8821ECCA5F70066C5CA /* SnapKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4C08B8751ECCA3C30066C5CA /* SnapKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4C08B8831ECCA5F70066C5CA /* Swinject.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4C08B8761ECCA3C30066C5CA /* Swinject.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4C08B8851ECCA6090066C5CA /* Nimble.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4C08B87B1ECCA5DC0066C5CA /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4C08B8861ECCA6090066C5CA /* Quick.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4C08B87C1ECCA5DC0066C5CA /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4C08B88B1ECCA8110066C5CA /* GalleryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C08B8891ECCA8110066C5CA /* GalleryPresenter.swift */; };
+		4C08B88C1ECCA8110066C5CA /* GalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C08B88A1ECCA8110066C5CA /* GalleryViewController.swift */; };
+		4C08B88F1ECCA8180066C5CA /* PhotoPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C08B88D1ECCA8180066C5CA /* PhotoPresenter.swift */; };
+		4C08B8901ECCA8180066C5CA /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C08B88E1ECCA8180066C5CA /* PhotoViewController.swift */; };
+		4C08B8921ECCA8270066C5CA /* FlickrService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C08B8911ECCA8270066C5CA /* FlickrService.swift */; };
+		4C08B8941ECCA82F0066C5CA /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C08B8931ECCA82F0066C5CA /* Photo.swift */; };
+		4C08B8961ECCA8360066C5CA /* MainWorkflow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C08B8951ECCA8360066C5CA /* MainWorkflow.swift */; };
+		4C08B8981ECCA83C0066C5CA /* MainAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C08B8971ECCA83C0066C5CA /* MainAssembly.swift */; };
+		4C08B89A1ECCA8700066C5CA /* ServicesUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C08B8991ECCA8700066C5CA /* ServicesUtilities.swift */; };
+		4C08B89D1ECCAEE50066C5CA /* ViewType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C08B89C1ECCAEE50066C5CA /* ViewType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +85,16 @@
 		4C08B8761ECCA3C30066C5CA /* Swinject.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Swinject.framework; path = Carthage/Build/iOS/Swinject.framework; sourceTree = "<group>"; };
 		4C08B87B1ECCA5DC0066C5CA /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
 		4C08B87C1ECCA5DC0066C5CA /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
+		4C08B8891ECCA8110066C5CA /* GalleryPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GalleryPresenter.swift; sourceTree = "<group>"; };
+		4C08B88A1ECCA8110066C5CA /* GalleryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GalleryViewController.swift; sourceTree = "<group>"; };
+		4C08B88D1ECCA8180066C5CA /* PhotoPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoPresenter.swift; sourceTree = "<group>"; };
+		4C08B88E1ECCA8180066C5CA /* PhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
+		4C08B8911ECCA8270066C5CA /* FlickrService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlickrService.swift; sourceTree = "<group>"; };
+		4C08B8931ECCA82F0066C5CA /* Photo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		4C08B8951ECCA8360066C5CA /* MainWorkflow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainWorkflow.swift; sourceTree = "<group>"; };
+		4C08B8971ECCA83C0066C5CA /* MainAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainAssembly.swift; sourceTree = "<group>"; };
+		4C08B8991ECCA8700066C5CA /* ServicesUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServicesUtilities.swift; sourceTree = "<group>"; };
+		4C08B89C1ECCAEE50066C5CA /* ViewType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,8 +102,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4C08B87D1ECCA5DC0066C5CA /* Nimble.framework in Frameworks */,
-				4C08B87E1ECCA5DC0066C5CA /* Quick.framework in Frameworks */,
 				4C08B8771ECCA3C30066C5CA /* Alamofire.framework in Frameworks */,
 				4C08B8781ECCA3C30066C5CA /* JASON.framework in Frameworks */,
 				4C08B8791ECCA3C30066C5CA /* SnapKit.framework in Frameworks */,
@@ -131,6 +147,7 @@
 				4C08B86D1ECCA32C0066C5CA /* Models */,
 				4C08B86E1ECCA3300066C5CA /* Services */,
 				4C08B86F1ECCA3360066C5CA /* Usecases */,
+				4C08B89B1ECCAEDA0066C5CA /* Helpers */,
 				4C08B8701ECCA33F0066C5CA /* Resources */,
 				4C08B8711ECCA3440066C5CA /* Others */,
 			);
@@ -157,6 +174,7 @@
 		4C08B86B1ECCA3220066C5CA /* Assemblies */ = {
 			isa = PBXGroup;
 			children = (
+				4C08B8971ECCA83C0066C5CA /* MainAssembly.swift */,
 			);
 			name = Assemblies;
 			sourceTree = "<group>";
@@ -164,6 +182,7 @@
 		4C08B86C1ECCA3280066C5CA /* Workflows */ = {
 			isa = PBXGroup;
 			children = (
+				4C08B8951ECCA8360066C5CA /* MainWorkflow.swift */,
 			);
 			name = Workflows;
 			sourceTree = "<group>";
@@ -171,6 +190,7 @@
 		4C08B86D1ECCA32C0066C5CA /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				4C08B8931ECCA82F0066C5CA /* Photo.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -178,6 +198,8 @@
 		4C08B86E1ECCA3300066C5CA /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				4C08B8991ECCA8700066C5CA /* ServicesUtilities.swift */,
+				4C08B8911ECCA8270066C5CA /* FlickrService.swift */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -185,6 +207,8 @@
 		4C08B86F1ECCA3360066C5CA /* Usecases */ = {
 			isa = PBXGroup;
 			children = (
+				4C08B8871ECCA7F60066C5CA /* Gallery */,
+				4C08B8881ECCA8000066C5CA /* Photo */,
 			);
 			name = Usecases;
 			sourceTree = "<group>";
@@ -217,6 +241,32 @@
 				4C08B8761ECCA3C30066C5CA /* Swinject.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4C08B8871ECCA7F60066C5CA /* Gallery */ = {
+			isa = PBXGroup;
+			children = (
+				4C08B8891ECCA8110066C5CA /* GalleryPresenter.swift */,
+				4C08B88A1ECCA8110066C5CA /* GalleryViewController.swift */,
+			);
+			name = Gallery;
+			sourceTree = "<group>";
+		};
+		4C08B8881ECCA8000066C5CA /* Photo */ = {
+			isa = PBXGroup;
+			children = (
+				4C08B88D1ECCA8180066C5CA /* PhotoPresenter.swift */,
+				4C08B88E1ECCA8180066C5CA /* PhotoViewController.swift */,
+			);
+			name = Photo;
+			sourceTree = "<group>";
+		};
+		4C08B89B1ECCAEDA0066C5CA /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				4C08B89C1ECCAEE50066C5CA /* ViewType.swift */,
+			);
+			name = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -325,7 +375,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C08B89A1ECCA8700066C5CA /* ServicesUtilities.swift in Sources */,
+				4C08B8941ECCA82F0066C5CA /* Photo.swift in Sources */,
+				4C08B8981ECCA83C0066C5CA /* MainAssembly.swift in Sources */,
+				4C08B88C1ECCA8110066C5CA /* GalleryViewController.swift in Sources */,
+				4C08B88F1ECCA8180066C5CA /* PhotoPresenter.swift in Sources */,
+				4C08B89D1ECCAEE50066C5CA /* ViewType.swift in Sources */,
+				4C08B8921ECCA8270066C5CA /* FlickrService.swift in Sources */,
 				4C08B84B1ECCA1C10066C5CA /* AppDelegate.swift in Sources */,
+				4C08B8961ECCA8360066C5CA /* MainWorkflow.swift in Sources */,
+				4C08B88B1ECCA8110066C5CA /* GalleryPresenter.swift in Sources */,
+				4C08B8901ECCA8180066C5CA /* PhotoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
