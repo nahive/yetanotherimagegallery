@@ -11,19 +11,31 @@ import UIKit
 protocol PhotoPresenterType: class {
     var photo: Photo! { get set }
     
-    init(view: PhotoViewType)
+    init(view: PhotoViewType, workflow: MainWorkflowType)
     
     func open(url: URL?)
     func save(photo: UIImage?)
+    func share(photo: UIImage?)
 }
 
-class PhotoPresenter {
+// NSObject is needed as #selectors still depend on obj-c runtime :( 
+class PhotoPresenter: NSObject {
     fileprivate weak var view: PhotoViewType!
+    fileprivate let workflow: MainWorkflowType
     
     var photo: Photo!
     
-    required init(view: PhotoViewType) {
+    required init(view: PhotoViewType, workflow: MainWorkflowType) {
         self.view = view
+        self.workflow = workflow
+    }
+    
+    dynamic func saveResult(image: UIImage, with error: Error!, contextInfo: AnyObject!) {
+        guard error == nil else {
+            view.present(message: "Couldn't save photo in library")
+            return
+        }
+        view.present(message: "Photo was saved in library")
     }
 }
 
@@ -39,11 +51,8 @@ extension PhotoPresenter: PhotoPresenterType {
         UIImageWriteToSavedPhotosAlbum(image, self, #selector(saveResult(image:with:contextInfo:)), nil)
     }
     
-    private dynamic func saveResult(image: UIImage, with error: Error!, contextInfo: AnyObject!) {
-        guard error == nil else {
-            view.present(message: "Couldn't save photo in library")
-            return
-        }
-        view.present(message: "Photo was saved in library")
+    func share(photo: UIImage?) {
+        guard let image = photo else { return }
+        workflow.presentShare(sender: view, activityItems: [image])
     }
 }

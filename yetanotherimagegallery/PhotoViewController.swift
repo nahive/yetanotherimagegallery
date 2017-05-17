@@ -170,7 +170,7 @@ class PhotoViewController: UIViewController {
             make.right.equalTo(contentView.snp.right).offset(-16)
             make.height.equalTo(contentView.snp.width).offset(32).multipliedBy(0.6)
         }
-
+        
         titleLabel.snp.makeConstraints { (make) in
             make.top.equalTo(photoImageView.snp.bottom).offset(16)
             make.left.equalTo(contentView.snp.left).offset(16)
@@ -230,13 +230,11 @@ class PhotoViewController: UIViewController {
     }
     
     private dynamic func saveButtonTapped(sender: UIImage) {
-       presenter.save(photo: photoImageView.image)
-    }   
+        presenter.save(photo: photoImageView.image)
+    }
     
     private dynamic func shareButtonTapped(sender: UIImage) {
-        guard let image = photoImageView.image else { return }
-        let controller = UIActivityViewController(activityItems: [image], applicationActivities: nil)
-        present(controller, animated: true, completion: nil)
+        presenter.share(photo: photoImageView.image)
     }
     
     private var startingScale: CGFloat = 0.0

@@ -12,6 +12,7 @@ import Swinject
 protocol MainWorkflowType {
     func start(window: UIWindow)
     func presentPhoto(sender: ViewType, photo: Photo)
+    func presentShare(sender: ViewType, activityItems: [Any])
 }
 
 class MainWorkflow {
@@ -42,5 +43,10 @@ extension MainWorkflow: MainWorkflowType {
         // Pass photo from previous controller to details.
         controller.presenter.photo = photo
         sender.present(viewType: controller, animated: true, completion: nil)
+    }
+    
+    func presentShare(sender: ViewType, activityItems: [Any]) {
+        let controller = UIActivityViewController(activityItems: activityItems, applicationActivities: nil)
+        sender.controller?.present(controller, animated: true, completion: nil)
     }
 }

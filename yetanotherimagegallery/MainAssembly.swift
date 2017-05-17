@@ -18,7 +18,7 @@ class MainAssembly: AssemblyType {
     func assemble(container: Container) {
         container.register(MainWorkflowType.self) { _ in
             return MainWorkflow(container: container)
-        }
+        }.inObjectScope(.container)
         
         container.register(FlickrServiceType.self) { _ in
             return FlickrService(baseURLString: "https://api.flickr.com")
@@ -45,7 +45,8 @@ class MainAssembly: AssemblyType {
         
         container.register(PhotoPresenterType.self) { r in
             let v = r.resolve(PhotoViewType.self)!
-            return PhotoPresenter(view: v)
+            let w = r.resolve(MainWorkflowType.self)!
+            return PhotoPresenter(view: v, workflow: w)
         }
     }
 }
