@@ -1,0 +1,15 @@
+#di
+github "Swinject/Swinject" "2.0.0-beta.2"
+
+#constraints
+github "SnapKit/SnapKit"
+
+#networking
+github "Alamofire/Alamofire"
+
+#json replacement until swift4
+github "delba/JASON"
+
+#testing
+#github "Quick/Quick"
+#github "Quick/Nimble"
