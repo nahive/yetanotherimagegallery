@@ -30,11 +30,16 @@ class GalleryPresenter {
 // MARK: GalleryPresenterType
 extension GalleryPresenter: GalleryPresenterType {
     func fetchPhotos(tags: String?) {
-        
+        service.photos(tags: tags) { [weak self] (result) in
+            switch result {
+            case .success(let photos): self?.view.present(photos: photos)
+            case .failure(error: let error): self?.view.present(error: error)
+            }
+        }
     }
     
     func presentPhoto(at indexPath: IndexPath) {
         // TODO: implement proper photo passing
-        workflow.presentPhoto(sender: view, photo: Photo())
+//        workflow.presentPhoto(sender: view, photo: )
     }
 }

@@ -31,6 +31,7 @@
 		4C08B8981ECCA83C0066C5CA /* MainAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C08B8971ECCA83C0066C5CA /* MainAssembly.swift */; };
 		4C08B89A1ECCA8700066C5CA /* ServicesUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C08B8991ECCA8700066C5CA /* ServicesUtilities.swift */; };
 		4C08B89D1ECCAEE50066C5CA /* ViewType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C08B89C1ECCAEE50066C5CA /* ViewType.swift */; };
+		4C08B89F1ECCBDA30066C5CA /* GalleryCollectionLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C08B89E1ECCBDA30066C5CA /* GalleryCollectionLayout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +96,7 @@
 		4C08B8971ECCA83C0066C5CA /* MainAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainAssembly.swift; sourceTree = "<group>"; };
 		4C08B8991ECCA8700066C5CA /* ServicesUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServicesUtilities.swift; sourceTree = "<group>"; };
 		4C08B89C1ECCAEE50066C5CA /* ViewType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewType.swift; sourceTree = "<group>"; };
+		4C08B89E1ECCBDA30066C5CA /* GalleryCollectionLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GalleryCollectionLayout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -246,6 +248,7 @@
 		4C08B8871ECCA7F60066C5CA /* Gallery */ = {
 			isa = PBXGroup;
 			children = (
+				4C08B89E1ECCBDA30066C5CA /* GalleryCollectionLayout.swift */,
 				4C08B8891ECCA8110066C5CA /* GalleryPresenter.swift */,
 				4C08B88A1ECCA8110066C5CA /* GalleryViewController.swift */,
 			);
@@ -378,6 +381,7 @@
 				4C08B89A1ECCA8700066C5CA /* ServicesUtilities.swift in Sources */,
 				4C08B8941ECCA82F0066C5CA /* Photo.swift in Sources */,
 				4C08B8981ECCA83C0066C5CA /* MainAssembly.swift in Sources */,
+				4C08B89F1ECCBDA30066C5CA /* GalleryCollectionLayout.swift in Sources */,
 				4C08B88C1ECCA8110066C5CA /* GalleryViewController.swift in Sources */,
 				4C08B88F1ECCA8180066C5CA /* PhotoPresenter.swift in Sources */,
 				4C08B89D1ECCAEE50066C5CA /* ViewType.swift in Sources */,

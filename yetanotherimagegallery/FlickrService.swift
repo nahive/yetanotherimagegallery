@@ -10,7 +10,7 @@ import Alamofire
 
 protocol FlickrServiceType: class {
     init(baseURLString: String)
-    func photos(tags: String, result: (ServiceResult<Photo>) -> Void)
+    func photos(tags: String?, completion: @escaping (ServiceResult<[Photo]>) -> Void)
 }
 
 class FlickrService {
@@ -26,14 +26,18 @@ class FlickrService {
 
 // MARK: FlickrServiceType
 extension FlickrService: FlickrServiceType {
-    func photos(tags: String, result: (ServiceResult<Photo>) -> Void) {
-        let params: Parameters = ["tags": tags]
-        let url = baseURLString + "/services/feed/photos_public.gne"
+    func photos(tags: String?, completion: @escaping (ServiceResult<[Photo]>) -> Void) {
+        var params: Parameters = ["format": "json", "nojsoncallback": 1]
+        if let tags = tags { params["tags"] = tags }
         
-        Alamofire.request(url, method: .get, parameters: params).responseJSON { (response) in
+        let url = baseURLString + "/services/feeds/photos_public.gne"
+        
+        Alamofire.request(url, method: .get, parameters: params).responseCustomJSON { (response) in
             switch response.result {
-            case .success(let json): break
-            case .failure(let error): break
+            case .success(let json):
+                completion(.success(Photo.array(from: json["items"])))
+            case .failure(let error):
+                completion(.failure(error: error.localizedDescription))
             }
         }
     }

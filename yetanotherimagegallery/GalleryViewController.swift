@@ -20,21 +20,24 @@ protocol GalleryViewType: ViewType {
 
 class GalleryViewController: UIViewController {
     
-    private lazy var button: UIButton = {
-       let button = UIButton()
-        button.setTitle("Click me!", for: .normal)
-        button.setTitleColor(.black, for: .normal)
-        button.titleLabel?.font = .systemFont(ofSize: 30)
-        button.addTarget(self, action: #selector(buttonTapped(sender:)), for: .touchUpInside)
-        return button
+    var presenter: GalleryPresenterType!
+    
+    private lazy var searchBar: UISearchBar = {
+        let searchBar = UISearchBar()
+        return searchBar
     }()
     
-    var presenter: GalleryPresenterType!
+    private lazy var collectionView: UICollectionView = {
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: GalleryCollectionLayout())
+        return collectionView
+    }()
     
     // MARK: init
     override func viewDidLoad(){
         super.viewDidLoad()
         setup()
+        
+        presenter.fetchPhotos(tags: nil)
     }
     
     // MARK: setup
@@ -45,17 +48,24 @@ class GalleryViewController: UIViewController {
     }
     
     private func setupView() {
-        view.backgroundColor = .darkGray
+        navigationItem.title = "Yet another photo app"
     }
     
     private func setupSubviews() {
-        view.addSubview(button)
+        view.addSubview(collectionView)
+        view.addSubview(searchBar)
     }
     
     private func setupConstraints() {
-        button.snp.makeConstraints { (make) in
-            make.center.equalTo(view.snp.center)
-            make.size.equalTo(100)
+        searchBar.snp.makeConstraints { (make) in
+            make.top.equalTo(view.snp.top)
+            make.right.equalTo(view.snp.right)
+            make.left.equalTo(view.snp.left)
+            make.height.equalTo(64)
+        }
+        
+        collectionView.snp.makeConstraints { (make) in
+            make.edges.equalTo(view.snp.edges)
         }
     }
     
