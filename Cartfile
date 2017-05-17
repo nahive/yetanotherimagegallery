@@ -11,5 +11,5 @@ github "Alamofire/Alamofire"
 github "delba/JASON"
 
 #testing
-#github "Quick/Quick"
-#github "Quick/Nimble"
+github "Quick/Quick"
+github "Quick/Nimble"

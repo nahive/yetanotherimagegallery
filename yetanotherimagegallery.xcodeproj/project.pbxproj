@@ -8,11 +8,21 @@
 
 /* Begin PBXBuildFile section */
 		4C08B84B1ECCA1C10066C5CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C08B84A1ECCA1C10066C5CA /* AppDelegate.swift */; };
-		4C08B84D1ECCA1C10066C5CA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C08B84C1ECCA1C10066C5CA /* ViewController.swift */; };
-		4C08B8501ECCA1C10066C5CA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C08B84E1ECCA1C10066C5CA /* Main.storyboard */; };
 		4C08B8521ECCA1C10066C5CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C08B8511ECCA1C10066C5CA /* Assets.xcassets */; };
 		4C08B8551ECCA1C10066C5CA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C08B8531ECCA1C10066C5CA /* LaunchScreen.storyboard */; };
 		4C08B8601ECCA1C20066C5CA /* yetanotherimagegalleryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C08B85F1ECCA1C20066C5CA /* yetanotherimagegalleryTests.swift */; };
+		4C08B8771ECCA3C30066C5CA /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C08B8731ECCA3C30066C5CA /* Alamofire.framework */; };
+		4C08B8781ECCA3C30066C5CA /* JASON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C08B8741ECCA3C30066C5CA /* JASON.framework */; };
+		4C08B8791ECCA3C30066C5CA /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C08B8751ECCA3C30066C5CA /* SnapKit.framework */; };
+		4C08B87A1ECCA3C30066C5CA /* Swinject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C08B8761ECCA3C30066C5CA /* Swinject.framework */; };
+		4C08B87D1ECCA5DC0066C5CA /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C08B87B1ECCA5DC0066C5CA /* Nimble.framework */; };
+		4C08B87E1ECCA5DC0066C5CA /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C08B87C1ECCA5DC0066C5CA /* Quick.framework */; };
+		4C08B8801ECCA5F70066C5CA /* Alamofire.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4C08B8731ECCA3C30066C5CA /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4C08B8811ECCA5F70066C5CA /* JASON.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4C08B8741ECCA3C30066C5CA /* JASON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4C08B8821ECCA5F70066C5CA /* SnapKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4C08B8751ECCA3C30066C5CA /* SnapKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4C08B8831ECCA5F70066C5CA /* Swinject.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4C08B8761ECCA3C30066C5CA /* Swinject.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4C08B8851ECCA6090066C5CA /* Nimble.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4C08B87B1ECCA5DC0066C5CA /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4C08B8861ECCA6090066C5CA /* Quick.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4C08B87C1ECCA5DC0066C5CA /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -25,17 +35,48 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		4C08B87F1ECCA5E60066C5CA /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				4C08B8801ECCA5F70066C5CA /* Alamofire.framework in CopyFiles */,
+				4C08B8811ECCA5F70066C5CA /* JASON.framework in CopyFiles */,
+				4C08B8821ECCA5F70066C5CA /* SnapKit.framework in CopyFiles */,
+				4C08B8831ECCA5F70066C5CA /* Swinject.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4C08B8841ECCA6000066C5CA /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				4C08B8851ECCA6090066C5CA /* Nimble.framework in CopyFiles */,
+				4C08B8861ECCA6090066C5CA /* Quick.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		4C08B8471ECCA1C10066C5CA /* yetanotherimagegallery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = yetanotherimagegallery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C08B84A1ECCA1C10066C5CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4C08B84C1ECCA1C10066C5CA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		4C08B84F1ECCA1C10066C5CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4C08B8511ECCA1C10066C5CA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4C08B8541ECCA1C10066C5CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4C08B8561ECCA1C10066C5CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4C08B85B1ECCA1C20066C5CA /* yetanotherimagegalleryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = yetanotherimagegalleryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C08B85F1ECCA1C20066C5CA /* yetanotherimagegalleryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = yetanotherimagegalleryTests.swift; sourceTree = "<group>"; };
 		4C08B8611ECCA1C20066C5CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4C08B8731ECCA3C30066C5CA /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		4C08B8741ECCA3C30066C5CA /* JASON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JASON.framework; path = Carthage/Build/iOS/JASON.framework; sourceTree = "<group>"; };
+		4C08B8751ECCA3C30066C5CA /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
+		4C08B8761ECCA3C30066C5CA /* Swinject.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Swinject.framework; path = Carthage/Build/iOS/Swinject.framework; sourceTree = "<group>"; };
+		4C08B87B1ECCA5DC0066C5CA /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
+		4C08B87C1ECCA5DC0066C5CA /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +84,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C08B87D1ECCA5DC0066C5CA /* Nimble.framework in Frameworks */,
+				4C08B87E1ECCA5DC0066C5CA /* Quick.framework in Frameworks */,
+				4C08B8771ECCA3C30066C5CA /* Alamofire.framework in Frameworks */,
+				4C08B8781ECCA3C30066C5CA /* JASON.framework in Frameworks */,
+				4C08B8791ECCA3C30066C5CA /* SnapKit.framework in Frameworks */,
+				4C08B87A1ECCA3C30066C5CA /* Swinject.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,6 +109,7 @@
 				4C08B8491ECCA1C10066C5CA /* yetanotherimagegallery */,
 				4C08B85E1ECCA1C20066C5CA /* yetanotherimagegalleryTests */,
 				4C08B8481ECCA1C10066C5CA /* Products */,
+				4C08B8721ECCA3C30066C5CA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -77,12 +125,14 @@
 		4C08B8491ECCA1C10066C5CA /* yetanotherimagegallery */ = {
 			isa = PBXGroup;
 			children = (
-				4C08B84A1ECCA1C10066C5CA /* AppDelegate.swift */,
-				4C08B84C1ECCA1C10066C5CA /* ViewController.swift */,
-				4C08B84E1ECCA1C10066C5CA /* Main.storyboard */,
-				4C08B8511ECCA1C10066C5CA /* Assets.xcassets */,
-				4C08B8531ECCA1C10066C5CA /* LaunchScreen.storyboard */,
-				4C08B8561ECCA1C10066C5CA /* Info.plist */,
+				4C08B86A1ECCA31C0066C5CA /* Setup */,
+				4C08B86B1ECCA3220066C5CA /* Assemblies */,
+				4C08B86C1ECCA3280066C5CA /* Workflows */,
+				4C08B86D1ECCA32C0066C5CA /* Models */,
+				4C08B86E1ECCA3300066C5CA /* Services */,
+				4C08B86F1ECCA3360066C5CA /* Usecases */,
+				4C08B8701ECCA33F0066C5CA /* Resources */,
+				4C08B8711ECCA3440066C5CA /* Others */,
 			);
 			path = yetanotherimagegallery;
 			sourceTree = "<group>";
@@ -96,6 +146,79 @@
 			path = yetanotherimagegalleryTests;
 			sourceTree = "<group>";
 		};
+		4C08B86A1ECCA31C0066C5CA /* Setup */ = {
+			isa = PBXGroup;
+			children = (
+				4C08B84A1ECCA1C10066C5CA /* AppDelegate.swift */,
+			);
+			name = Setup;
+			sourceTree = "<group>";
+		};
+		4C08B86B1ECCA3220066C5CA /* Assemblies */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Assemblies;
+			sourceTree = "<group>";
+		};
+		4C08B86C1ECCA3280066C5CA /* Workflows */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Workflows;
+			sourceTree = "<group>";
+		};
+		4C08B86D1ECCA32C0066C5CA /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		4C08B86E1ECCA3300066C5CA /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
+		4C08B86F1ECCA3360066C5CA /* Usecases */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Usecases;
+			sourceTree = "<group>";
+		};
+		4C08B8701ECCA33F0066C5CA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				4C08B8511ECCA1C10066C5CA /* Assets.xcassets */,
+				4C08B8531ECCA1C10066C5CA /* LaunchScreen.storyboard */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		4C08B8711ECCA3440066C5CA /* Others */ = {
+			isa = PBXGroup;
+			children = (
+				4C08B8561ECCA1C10066C5CA /* Info.plist */,
+			);
+			name = Others;
+			sourceTree = "<group>";
+		};
+		4C08B8721ECCA3C30066C5CA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4C08B87B1ECCA5DC0066C5CA /* Nimble.framework */,
+				4C08B87C1ECCA5DC0066C5CA /* Quick.framework */,
+				4C08B8731ECCA3C30066C5CA /* Alamofire.framework */,
+				4C08B8741ECCA3C30066C5CA /* JASON.framework */,
+				4C08B8751ECCA3C30066C5CA /* SnapKit.framework */,
+				4C08B8761ECCA3C30066C5CA /* Swinject.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -105,6 +228,7 @@
 			buildPhases = (
 				4C08B8431ECCA1C10066C5CA /* Sources */,
 				4C08B8441ECCA1C10066C5CA /* Frameworks */,
+				4C08B87F1ECCA5E60066C5CA /* CopyFiles */,
 				4C08B8451ECCA1C10066C5CA /* Resources */,
 			);
 			buildRules = (
@@ -122,6 +246,7 @@
 			buildPhases = (
 				4C08B8571ECCA1C20066C5CA /* Sources */,
 				4C08B8581ECCA1C20066C5CA /* Frameworks */,
+				4C08B8841ECCA6000066C5CA /* CopyFiles */,
 				4C08B8591ECCA1C20066C5CA /* Resources */,
 			);
 			buildRules = (
@@ -146,7 +271,8 @@
 				TargetAttributes = {
 					4C08B8461ECCA1C10066C5CA = {
 						CreatedOnToolsVersion = 8.3.2;
-						ProvisioningStyle = Manual;
+						DevelopmentTeam = LK98J2HBA6;
+						ProvisioningStyle = Automatic;
 					};
 					4C08B85A1ECCA1C20066C5CA = {
 						CreatedOnToolsVersion = 8.3.2;
@@ -182,7 +308,6 @@
 			files = (
 				4C08B8551ECCA1C10066C5CA /* LaunchScreen.storyboard in Resources */,
 				4C08B8521ECCA1C10066C5CA /* Assets.xcassets in Resources */,
-				4C08B8501ECCA1C10066C5CA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -200,7 +325,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4C08B84D1ECCA1C10066C5CA /* ViewController.swift in Sources */,
 				4C08B84B1ECCA1C10066C5CA /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -224,14 +348,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		4C08B84E1ECCA1C10066C5CA /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4C08B84F1ECCA1C10066C5CA /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		4C08B8531ECCA1C10066C5CA /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -342,10 +458,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = LK98J2HBA6;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = yetanotherimagegallery/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = io.nahive.yetanotherimagegallery;
+				PRODUCT_BUNDLE_IDENTIFIER = io.nahive.yetanotherimagegallery2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
@@ -356,10 +478,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = LK98J2HBA6;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = yetanotherimagegallery/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = io.nahive.yetanotherimagegallery;
+				PRODUCT_BUNDLE_IDENTIFIER = io.nahive.yetanotherimagegallery2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
