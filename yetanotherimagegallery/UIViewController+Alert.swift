@@ -22,7 +22,7 @@ extension UIViewController {
         label.text = message
         label.frame = backgroundView.frame
         label.textColor = .white
-        label.font = .boldSystemFont(ofSize: 16)
+        label.font = .systemFont(ofSize: 16)
         label.numberOfLines = 0
         label.textAlignment = .center
         label.alpha = 0
@@ -31,7 +31,7 @@ extension UIViewController {
         UIApplication.shared.keyWindow?.addSubview(backgroundView)
         UIApplication.shared.keyWindow?.addSubview(label)
         
-        UIView.animate(withDuration: 0.3, delay: 0.0, options: .curveEaseIn, animations: {
+        UIView.animate(withDuration: 0.3, delay: 0.1, options: .curveEaseIn, animations: {
              backgroundView.alpha = 1.0
             label.alpha = 1.0
         }, completion: nil)

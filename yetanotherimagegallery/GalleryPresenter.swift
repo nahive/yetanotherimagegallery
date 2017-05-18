@@ -63,7 +63,9 @@ extension GalleryPresenter: GalleryPresenterType {
     // default value for tags should be nil, but 
     // protocols don't allow default values
     func fetchPhotos(tags: String?) {
+        view.presentIndicator()
         service.photos(tags: tags) { [weak self] (result) in
+            self?.view.hideIndicator()
             switch result {
             case .success(let photos):
                 self?.photos = photos

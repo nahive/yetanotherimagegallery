@@ -14,6 +14,8 @@ protocol GalleryViewType: ViewType {
     
     func presentPhotos()
     func present(error: String)
+    func presentIndicator()
+    func hideIndicator()
 }
 
 class GalleryViewController: UIViewController {
@@ -44,6 +46,18 @@ class GalleryViewController: UIViewController {
         return item
     }()
     
+    fileprivate lazy var refreshNavigationButton: UIBarButtonItem = {
+        let item = UIBarButtonItem(title: "Refresh", style: .plain, target: self, action: #selector(refreshButtonTapped(sender:)))
+        return item
+    }()
+    
+    fileprivate lazy var refreshingNavigationStatus: UIBarButtonItem = {
+        let activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .gray)
+        activityIndicator.startAnimating()
+        let item = UIBarButtonItem(customView: activityIndicator)
+        return item
+    }()
+    
     // MARK: init
     override func viewDidLoad(){
         super.viewDidLoad()
@@ -63,6 +77,7 @@ class GalleryViewController: UIViewController {
         navigationItem.title = "Yet another photo app"
         navigationController?.navigationBar.isTranslucent = true
         navigationItem.rightBarButtonItem = sortNavigationButton
+        navigationItem.leftBarButtonItem = refreshNavigationButton
     }
     
     private func setupSubviews() {
@@ -86,6 +101,10 @@ class GalleryViewController: UIViewController {
     
     private dynamic func sortButtonTapped(sender: UIBarButtonItem) {
         presentSortTypeMenu()
+    }
+    
+    private dynamic func refreshButtonTapped(sender: UIBarButtonItem) {
+        presenter.fetchPhotos(tags: searchBar.text)
     }
     
     private func presentSortTypeMenu() {
@@ -120,9 +139,16 @@ extension GalleryViewController: GalleryViewType {
         alert(message: error)
     }
     
-    
     func presentPhotos() {
         collectionView.reloadData()
+    }
+    
+    func presentIndicator() {
+        navigationItem.leftBarButtonItem = refreshingNavigationStatus
+    }
+    
+    func hideIndicator() {
+        navigationItem.leftBarButtonItem = refreshNavigationButton
     }
 }
 
