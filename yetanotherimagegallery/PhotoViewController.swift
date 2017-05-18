@@ -229,12 +229,12 @@ class PhotoViewController: UIViewController {
         presenter.open(url: presenter.photo.url)
     }
     
-    private dynamic func saveButtonTapped(sender: UIImage) {
+    private dynamic func saveButtonTapped(sender: UIButton) {
         presenter.save(photo: photoImageView.image)
     }
     
-    private dynamic func shareButtonTapped(sender: UIImage) {
-        presenter.share(photo: photoImageView.image)
+    private dynamic func shareButtonTapped(sender: UIButton) {
+        presenter.share(photo: photoImageView.image, from: sender)
     }
     
     private var startingScale: CGFloat = 0.0

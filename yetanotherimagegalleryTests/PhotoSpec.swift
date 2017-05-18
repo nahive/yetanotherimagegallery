@@ -48,7 +48,7 @@ class PhotoSpec: QuickSpec {
                     view = PhotoViewMock()
                     workflow = MainWorkflowMock()
                     presenter = PhotoPresenter(view: view, workflow: workflow)
-                    presenter.share(photo: nil)
+                    presenter.share(photo: nil, from: UIView())
                 }
                 
                 it("should succeed") {
@@ -63,7 +63,7 @@ class PhotoSpec: QuickSpec {
                     view = PhotoViewMock()
                     workflow = MainWorkflowMock()
                     presenter = PhotoPresenter(view: view, workflow: workflow)
-                    presenter.share(photo: #imageLiteral(resourceName: "test_photo"))
+                    presenter.share(photo: #imageLiteral(resourceName: "test_photo"), from: UIView())
                 }
                 
                 it("should succeed") {

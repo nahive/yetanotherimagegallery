@@ -25,7 +25,7 @@ extension MainWorkflowMock: MainWorkflowType {
         wasPhotoPresented = true
     }
     
-    func presentShare(sender: ViewType, activityItems: [Any]) {
+    func presentShare(sender: ViewType, activityItems: [Any], from view: UIView) {
         wasSharePresented = true
     }
 }

@@ -12,7 +12,7 @@ import Swinject
 protocol MainWorkflowType {
     func start(window: UIWindow)
     func presentPhoto(sender: ViewType, photo: Photo)
-    func presentShare(sender: ViewType, activityItems: [Any])
+    func presentShare(sender: ViewType, activityItems: [Any], from view: UIView)
 }
 
 class MainWorkflow {
@@ -51,8 +51,9 @@ extension MainWorkflow: MainWorkflowType {
         sender.present(viewType: controller, animated: true, completion: nil)
     }
     
-    func presentShare(sender: ViewType, activityItems: [Any]) {
+    func presentShare(sender: ViewType, activityItems: [Any], from view: UIView) {
         let controller = UIActivityViewController(activityItems: activityItems, applicationActivities: nil)
+        controller.popoverPresentationController?.sourceView = view
         sender.controller?.present(controller, animated: true, completion: nil)
     }
 }

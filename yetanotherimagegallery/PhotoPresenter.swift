@@ -15,7 +15,7 @@ protocol PhotoPresenterType: class {
     
     func open(url: URL?)
     func save(photo: UIImage?)
-    func share(photo: UIImage?)
+    func share(photo: UIImage?, from view: UIView)
 }
 
 // NSObject is needed as #selectors still depend on obj-c runtime :( 
@@ -57,11 +57,11 @@ extension PhotoPresenter: PhotoPresenterType {
         UIImageWriteToSavedPhotosAlbum(image, self, #selector(saveResult(image:with:contextInfo:)), nil)
     }
     
-    func share(photo: UIImage?) {
+    func share(photo: UIImage?, from view: UIView) {
         guard let image = photo else {
-            view.present(message: "Couldn't share photo")
+            self.view.present(message: "Couldn't share photo")
             return
         }
-        workflow.presentShare(sender: view, activityItems: [image])
+        workflow.presentShare(sender: self.view, activityItems: [image], from: view)
     }
 }

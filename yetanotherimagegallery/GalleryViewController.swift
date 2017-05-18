@@ -115,6 +115,7 @@ class GalleryViewController: UIViewController {
                 self?.presentSortOptionsMenu(with: item)
             }))
         }
+        controller.popoverPresentationController?.barButtonItem = sortNavigationButton
         controller.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         present(controller, animated: true)
     }
@@ -126,6 +127,7 @@ class GalleryViewController: UIViewController {
                 self?.presenter.sortPhotos(by: type, options: item)
             }))
         }
+        controller.popoverPresentationController?.barButtonItem = sortNavigationButton
         controller.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         present(controller, animated: true)
     }
