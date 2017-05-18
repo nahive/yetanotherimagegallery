@@ -31,7 +31,7 @@ class PhotoPresenter: NSObject {
     }
     
     dynamic func saveResult(image: UIImage, with error: Error!, contextInfo: AnyObject!) {
-        guard error == nil else {
+        guard error != nil else {
             view.present(message: "Couldn't save photo in library")
             return
         }
@@ -42,17 +42,26 @@ class PhotoPresenter: NSObject {
 // MARK: PhotoPresenterType
 extension PhotoPresenter: PhotoPresenterType {
     func open(url: URL?) {
-        guard let url = url else { return }
+        guard let url = url else {
+            view.present(message: "Couldn't open url")
+            return
+        }
         UIApplication.shared.open(url)
     }
     
     func save(photo: UIImage?) {
-        guard let image = photo else { return }
+        guard let image = photo else {
+             view.present(message: "Couldn't save photo in library")
+            return
+        }
         UIImageWriteToSavedPhotosAlbum(image, self, #selector(saveResult(image:with:contextInfo:)), nil)
     }
     
     func share(photo: UIImage?) {
-        guard let image = photo else { return }
+        guard let image = photo else {
+            view.present(message: "Couldn't share photo")
+            return
+        }
         workflow.presentShare(sender: view, activityItems: [image])
     }
 }

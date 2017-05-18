@@ -21,7 +21,7 @@ class MainAssembly: AssemblyType {
         }.inObjectScope(.container)
         
         container.register(FlickrServiceType.self) { _ in
-            return FlickrService(baseURLString: "https://api.flickr.com")
+            return FlickrService(baseURLString: Config.flickrURLString)
         }.inObjectScope(.container)
         
         container.register(GalleryViewType.self) { r in

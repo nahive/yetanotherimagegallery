@@ -50,7 +50,7 @@ class GalleryCollectionCell: UICollectionViewCell {
         }
     }
     
-    // MARK: public methods
+    // MARK: configurations
     
     func configure(photo: Photo) {
         photoImageView.set(url: photo.imageURL)

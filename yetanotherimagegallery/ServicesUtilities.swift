@@ -9,12 +9,16 @@
 import JASON
 import Alamofire
 
+/// Enum holding result of a service task
+///
+/// - success: holds an object(s) from service task response
+/// - failure: holds an error (in a string)
 enum ServiceResult<T> {
     case success(T)
     case failure(error: String)
 }
 
-
+// Just an extension for Alamofire for easier json parsing
 extension DataRequest {
     enum CustomError: Error {
         case networkError(error: Error?)

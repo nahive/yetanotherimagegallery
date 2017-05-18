@@ -9,6 +9,7 @@
 import UIKit
 import Kingfisher
 
+// UIImage caching + helper for settings in UIImageView
 extension UIImageView {
     func set(urlString: String?, placeholder: UIImage? = nil, blur: Bool = false, completion: CompletionHandler? = nil) {
         guard let urlString = urlString else { return }

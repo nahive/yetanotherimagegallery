@@ -18,7 +18,7 @@ class FlickrService {
     
     /// Configures service with provided base URL
     ///
-    /// - Parameter url: base string URL (ex. http://api.flickr.com)
+    /// - Parameter baseURLString: base string URL (ex. http://api.flickr.com)
     required init(baseURLString: String) {
         self.baseURLString = baseURLString
     }

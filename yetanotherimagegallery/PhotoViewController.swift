@@ -239,6 +239,7 @@ class PhotoViewController: UIViewController {
     
     private var startingScale: CGFloat = 0.0
     private dynamic func photoImageViewPinched(recognizer: UIPinchGestureRecognizer) {
+        // TODO: fix anchor point to start scaling from pinch center
         switch recognizer.state {
         case .possible: break
         case .began:
@@ -252,8 +253,6 @@ class PhotoViewController: UIViewController {
             }, completion: nil)
         }
     }
-    
-    // MARK: helpers
 }
 
 // MARK: PhotoViewType

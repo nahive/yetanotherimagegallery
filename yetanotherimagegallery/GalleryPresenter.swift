@@ -8,6 +8,7 @@
 
 import UIKit
 
+/// Sorting types that can be sorted by
 enum GallerySortType {
     case taken, published
     static let all = [taken, published]
@@ -20,6 +21,7 @@ enum GallerySortType {
     }
 }
 
+/// Sorting options for gallery
 enum GallerySortOptions {
     case ascending, descending
     static let all = [ascending, descending]
@@ -57,10 +59,11 @@ class GalleryPresenter: NSObject {
 
 // MARK: GalleryPresenterType
 extension GalleryPresenter: GalleryPresenterType {
+    
+    // default value for tags should be nil, but 
+    // protocols don't allow default values
     func fetchPhotos(tags: String?) {
-        view.presentIndicator()
         service.photos(tags: tags) { [weak self] (result) in
-            self?.view.hideIndicator()
             switch result {
             case .success(let photos):
                 self?.photos = photos
@@ -72,7 +75,6 @@ extension GalleryPresenter: GalleryPresenterType {
     }
     
     func presentPhoto(at indexPath: IndexPath) {
-        // TODO: implement proper photo passing
         workflow.presentPhoto(sender: view, photo: photos[indexPath.item])
     }
     

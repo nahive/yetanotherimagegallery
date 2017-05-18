@@ -15,7 +15,7 @@ class FlickrServiceMock {
     var shouldCallSucceed = false
     
     required init(baseURLString: String) {
-        // skip
+        // skip as not needed for mock tests
     }
 }
 

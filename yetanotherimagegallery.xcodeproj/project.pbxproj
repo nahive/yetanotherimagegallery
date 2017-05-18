@@ -41,6 +41,8 @@
 		4CD835D41ECDA02D00DA0E10 /* MainWorkflowMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD835D31ECDA02D00DA0E10 /* MainWorkflowMock.swift */; };
 		4CD835D51ECDA15600DA0E10 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C08B87B1ECCA5DC0066C5CA /* Nimble.framework */; };
 		4CD835D61ECDA15600DA0E10 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C08B87C1ECCA5DC0066C5CA /* Quick.framework */; };
+		4CD835D81ECDA8A600DA0E10 /* PhotoSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD835D71ECDA8A600DA0E10 /* PhotoSpec.swift */; };
+		4CD835DA1ECDB21D00DA0E10 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD835D91ECDB21D00DA0E10 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -113,6 +115,8 @@
 		4CD835CF1ECD9A0700DA0E10 /* FlickrServiceMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlickrServiceMock.swift; sourceTree = "<group>"; };
 		4CD835D11ECD9DC700DA0E10 /* GallerySpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GallerySpec.swift; sourceTree = "<group>"; };
 		4CD835D31ECDA02D00DA0E10 /* MainWorkflowMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainWorkflowMock.swift; sourceTree = "<group>"; };
+		4CD835D71ECDA8A600DA0E10 /* PhotoSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoSpec.swift; sourceTree = "<group>"; };
+		4CD835D91ECDB21D00DA0E10 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -240,6 +244,7 @@
 		4C08B8701ECCA33F0066C5CA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				4CD835D91ECDB21D00DA0E10 /* Constants.swift */,
 				4C08B8511ECCA1C10066C5CA /* Assets.xcassets */,
 				4C08B8531ECCA1C10066C5CA /* LaunchScreen.storyboard */,
 			);
@@ -309,6 +314,7 @@
 		4CD835CE1ECD99DE00DA0E10 /* PhotoTests */ = {
 			isa = PBXGroup;
 			children = (
+				4CD835D71ECDA8A600DA0E10 /* PhotoSpec.swift */,
 			);
 			name = PhotoTests;
 			sourceTree = "<group>";
@@ -426,6 +432,7 @@
 				4C08B88C1ECCA8110066C5CA /* GalleryViewController.swift in Sources */,
 				4C08B88F1ECCA8180066C5CA /* PhotoPresenter.swift in Sources */,
 				4C08B8AF1ECCFDB70066C5CA /* UIViewController+Alert.swift in Sources */,
+				4CD835DA1ECDB21D00DA0E10 /* Constants.swift in Sources */,
 				4C08B8AB1ECCF0BF0066C5CA /* Date+Utilities.swift in Sources */,
 				4C08B89D1ECCAEE50066C5CA /* ViewType.swift in Sources */,
 				4C08B8921ECCA8270066C5CA /* FlickrService.swift in Sources */,
@@ -444,6 +451,7 @@
 				4CD835D01ECD9A0700DA0E10 /* FlickrServiceMock.swift in Sources */,
 				4CD835D41ECDA02D00DA0E10 /* MainWorkflowMock.swift in Sources */,
 				4CD835D21ECD9DC700DA0E10 /* GallerySpec.swift in Sources */,
+				4CD835D81ECDA8A600DA0E10 /* PhotoSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

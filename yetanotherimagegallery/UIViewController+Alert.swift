@@ -8,6 +8,7 @@
 
 import UIKit
 
+// Mock implementation of toasts that can display messages
 extension UIViewController {
     func alert(message: String) {
         let backgroundView = UIVisualEffectView(effect: UIBlurEffect(style: .dark))

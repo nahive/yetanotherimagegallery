@@ -11,7 +11,7 @@ import JASON
 class Photo {
     var title: String?
     
-    // as it turned out - description in flickr is some random html
+    // so it turned out - description in flickr is some random html
     // so I made it private just to store it, but don't display it
     private var description: String?
     
@@ -47,7 +47,6 @@ class Photo {
     }
     
     // MARK: parsing helper functions
-    
     private func date(from string: String?) -> Date? {
         guard let string = string else { return nil }
         let formatter = DateFormatter()
@@ -61,7 +60,6 @@ class Photo {
     }
     
     // MARK: factory
-    
     static func array(from json: JSON) -> [Photo] {
         return json.flatMap(Photo.init)
     }

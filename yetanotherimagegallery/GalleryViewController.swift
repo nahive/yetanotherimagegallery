@@ -14,8 +14,6 @@ protocol GalleryViewType: ViewType {
     
     func presentPhotos()
     func present(error: String)
-    func presentIndicator()
-    func hideIndicator()
 }
 
 class GalleryViewController: UIViewController {
@@ -125,14 +123,6 @@ extension GalleryViewController: GalleryViewType {
     
     func presentPhotos() {
         collectionView.reloadData()
-    }
-    
-    func presentIndicator() {
-        
-    }
-    
-    func hideIndicator() {
-        
     }
 }
 
