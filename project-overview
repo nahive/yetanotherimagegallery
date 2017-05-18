@@ -1,0 +1,12 @@
+Project overview:
+- uses carthage as dependency manager
+- uses Swinject as preferred framework for dependency injection
+- uses code-based views with SnapKit as constraint framework
+- uses Alamofire to simplify networking
+- uses Kingfisher to simplify image caching
+- uses Quick/Nimble for faster/simpler unit testing
+
+Instructions:
+- open project dir
+- `carthage bootstrap --platform ios`
+- open .xcproject
