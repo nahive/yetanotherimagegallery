@@ -128,7 +128,6 @@ class PhotoViewController: UIViewController {
         view.addSubview(backgroundView)
         view.addSubview(scrollView)
         scrollView.addSubview(contentView)
-        contentView.addSubview(photoImageView)
         contentView.addSubview(titleLabel)
         contentView.addSubview(tagsLabel)
         contentView.addSubview(takenDateLabel)
@@ -136,6 +135,7 @@ class PhotoViewController: UIViewController {
         contentView.addSubview(urlLabel)
         contentView.addSubview(shareButton)
         contentView.addSubview(saveButton)
+        contentView.addSubview(photoImageView)
     }
     
     private func setupConstraints() {

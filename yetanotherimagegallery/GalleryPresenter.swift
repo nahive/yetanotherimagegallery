@@ -95,8 +95,8 @@ extension GalleryPresenter: GalleryPresenterType {
             }
             
             switch options {
-            case .ascending: return dateA > dateB
-            case .descending: return dateA < dateB
+            case .ascending: return dateA < dateB
+            case .descending: return dateA > dateB
             }
         }
         

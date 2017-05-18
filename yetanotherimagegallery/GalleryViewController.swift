@@ -42,7 +42,7 @@ class GalleryViewController: UIViewController {
     }()
     
     private lazy var sortNavigationButton: UIBarButtonItem = {
-        let item = UIBarButtonItem(title: "Filter", style: .plain, target: self, action: #selector(sortButtonTapped(sender:)))
+        let item = UIBarButtonItem(title: "Sort", style: .plain, target: self, action: #selector(sortButtonTapped(sender:)))
         return item
     }()
     
@@ -140,7 +140,7 @@ extension GalleryViewController: GalleryViewType {
     }
     
     func presentPhotos() {
-        collectionView.reloadData()
+        collectionView.reloadSections(IndexSet(integer: 0))
     }
     
     func presentIndicator() {
