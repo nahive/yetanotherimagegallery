@@ -37,7 +37,7 @@ class GallerySpec: QuickSpec {
     
     override func spec() {
         mockedServiceSpec()
-//        realServiceSpec()
+        realServiceSpec()
         presenterSpec()
     }
     
