@@ -20,9 +20,9 @@ extension UIViewController {
         
         let label = UILabel()
         label.text = message
-        label.frame = backgroundView.frame
+        label.frame = backgroundView.frame.insetBy(dx: 16, dy: 16)
         label.textColor = .white
-        label.font = .systemFont(ofSize: 16)
+        label.font = .systemFont(ofSize: 18)
         label.numberOfLines = 0
         label.textAlignment = .center
         label.alpha = 0

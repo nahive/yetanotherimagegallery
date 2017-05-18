@@ -31,7 +31,7 @@ class PhotoPresenter: NSObject {
     }
     
     dynamic func saveResult(image: UIImage, with error: Error!, contextInfo: AnyObject!) {
-        guard error != nil else {
+        guard error == nil else {
             view.present(message: "Couldn't save photo in library")
             return
         }
