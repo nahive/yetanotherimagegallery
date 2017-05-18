@@ -27,6 +27,8 @@ class Photo {
     // those will be hold in string, split by comma
     var tags: String?
     
+    init() {}
+    
     init(json: JSON) {
         self.title = json["title"].string
         self.description = json["description"].string

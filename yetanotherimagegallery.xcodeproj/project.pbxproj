@@ -10,7 +10,6 @@
 		4C08B84B1ECCA1C10066C5CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C08B84A1ECCA1C10066C5CA /* AppDelegate.swift */; };
 		4C08B8521ECCA1C10066C5CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C08B8511ECCA1C10066C5CA /* Assets.xcassets */; };
 		4C08B8551ECCA1C10066C5CA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C08B8531ECCA1C10066C5CA /* LaunchScreen.storyboard */; };
-		4C08B8601ECCA1C20066C5CA /* yetanotherimagegalleryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C08B85F1ECCA1C20066C5CA /* yetanotherimagegalleryTests.swift */; };
 		4C08B8771ECCA3C30066C5CA /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C08B8731ECCA3C30066C5CA /* Alamofire.framework */; };
 		4C08B8781ECCA3C30066C5CA /* JASON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C08B8741ECCA3C30066C5CA /* JASON.framework */; };
 		4C08B8791ECCA3C30066C5CA /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C08B8751ECCA3C30066C5CA /* SnapKit.framework */; };
@@ -37,6 +36,11 @@
 		4C08B8A91ECCD4E60066C5CA /* UIImageView+Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C08B8A81ECCD4E60066C5CA /* UIImageView+Cache.swift */; };
 		4C08B8AB1ECCF0BF0066C5CA /* Date+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C08B8AA1ECCF0BF0066C5CA /* Date+Utilities.swift */; };
 		4C08B8AF1ECCFDB70066C5CA /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C08B8AE1ECCFDB70066C5CA /* UIViewController+Alert.swift */; };
+		4CD835D01ECD9A0700DA0E10 /* FlickrServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD835CF1ECD9A0700DA0E10 /* FlickrServiceMock.swift */; };
+		4CD835D21ECD9DC700DA0E10 /* GallerySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD835D11ECD9DC700DA0E10 /* GallerySpec.swift */; };
+		4CD835D41ECDA02D00DA0E10 /* MainWorkflowMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD835D31ECDA02D00DA0E10 /* MainWorkflowMock.swift */; };
+		4CD835D51ECDA15600DA0E10 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C08B87B1ECCA5DC0066C5CA /* Nimble.framework */; };
+		4CD835D61ECDA15600DA0E10 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C08B87C1ECCA5DC0066C5CA /* Quick.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,7 +88,6 @@
 		4C08B8541ECCA1C10066C5CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4C08B8561ECCA1C10066C5CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4C08B85B1ECCA1C20066C5CA /* yetanotherimagegalleryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = yetanotherimagegalleryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		4C08B85F1ECCA1C20066C5CA /* yetanotherimagegalleryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = yetanotherimagegalleryTests.swift; sourceTree = "<group>"; };
 		4C08B8611ECCA1C20066C5CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4C08B8731ECCA3C30066C5CA /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		4C08B8741ECCA3C30066C5CA /* JASON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JASON.framework; path = Carthage/Build/iOS/JASON.framework; sourceTree = "<group>"; };
@@ -107,6 +110,9 @@
 		4C08B8A81ECCD4E60066C5CA /* UIImageView+Cache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Cache.swift"; sourceTree = "<group>"; };
 		4C08B8AA1ECCF0BF0066C5CA /* Date+Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Utilities.swift"; sourceTree = "<group>"; };
 		4C08B8AE1ECCFDB70066C5CA /* UIViewController+Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
+		4CD835CF1ECD9A0700DA0E10 /* FlickrServiceMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlickrServiceMock.swift; sourceTree = "<group>"; };
+		4CD835D11ECD9DC700DA0E10 /* GallerySpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GallerySpec.swift; sourceTree = "<group>"; };
+		4CD835D31ECDA02D00DA0E10 /* MainWorkflowMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainWorkflowMock.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +132,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CD835D51ECDA15600DA0E10 /* Nimble.framework in Frameworks */,
+				4CD835D61ECDA15600DA0E10 /* Quick.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -170,7 +178,10 @@
 		4C08B85E1ECCA1C20066C5CA /* yetanotherimagegalleryTests */ = {
 			isa = PBXGroup;
 			children = (
-				4C08B85F1ECCA1C20066C5CA /* yetanotherimagegalleryTests.swift */,
+				4CD835CF1ECD9A0700DA0E10 /* FlickrServiceMock.swift */,
+				4CD835D31ECDA02D00DA0E10 /* MainWorkflowMock.swift */,
+				4CD835CE1ECD99DE00DA0E10 /* PhotoTests */,
+				4CD835CD1ECD99D000DA0E10 /* GalleryTests */,
 				4C08B8611ECCA1C20066C5CA /* Info.plist */,
 			);
 			path = yetanotherimagegalleryTests;
@@ -285,6 +296,21 @@
 				4C08B8AE1ECCFDB70066C5CA /* UIViewController+Alert.swift */,
 			);
 			name = Helpers;
+			sourceTree = "<group>";
+		};
+		4CD835CD1ECD99D000DA0E10 /* GalleryTests */ = {
+			isa = PBXGroup;
+			children = (
+				4CD835D11ECD9DC700DA0E10 /* GallerySpec.swift */,
+			);
+			name = GalleryTests;
+			sourceTree = "<group>";
+		};
+		4CD835CE1ECD99DE00DA0E10 /* PhotoTests */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = PhotoTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -415,7 +441,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4C08B8601ECCA1C20066C5CA /* yetanotherimagegalleryTests.swift in Sources */,
+				4CD835D01ECD9A0700DA0E10 /* FlickrServiceMock.swift in Sources */,
+				4CD835D41ECDA02D00DA0E10 /* MainWorkflowMock.swift in Sources */,
+				4CD835D21ECD9DC700DA0E10 /* GallerySpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -582,6 +610,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = LK98J2HBA6;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = yetanotherimagegalleryTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.nahive.yetanotherimagegalleryTests;
@@ -597,6 +629,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = LK98J2HBA6;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = yetanotherimagegalleryTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.nahive.yetanotherimagegalleryTests;
@@ -625,6 +661,7 @@
 				4C08B8661ECCA1C20066C5CA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4C08B8671ECCA1C20066C5CA /* Build configuration list for PBXNativeTarget "yetanotherimagegalleryTests" */ = {
 			isa = XCConfigurationList;
@@ -633,6 +670,7 @@
 				4C08B8691ECCA1C20066C5CA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

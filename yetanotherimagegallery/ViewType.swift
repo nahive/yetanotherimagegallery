@@ -15,6 +15,12 @@ protocol ViewType: class {
     func push(viewType: ViewType, animated: Bool)
 }
 
+extension ViewType {
+    var controller: UIViewController? { return nil }
+    func present(viewType: ViewType, animated: Bool, completion: (() -> Void)?) { }
+    func push(viewType: ViewType, animated: Bool) { }
+}
+
 extension ViewType where Self:UIViewController {
     var controller: UIViewController? { return self }
     
