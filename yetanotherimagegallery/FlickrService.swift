@@ -13,7 +13,7 @@ protocol FlickrServiceType: class {
     func photos(tags: String?, completion: @escaping (ServiceResult<[Photo]>) -> Void)
 }
 
-class FlickrService {
+final class FlickrService {
     fileprivate let baseURLString: String
     
     /// Configures service with provided base URL

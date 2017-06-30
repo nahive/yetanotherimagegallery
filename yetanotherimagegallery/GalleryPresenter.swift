@@ -35,15 +35,15 @@ enum GallerySortOptions {
 }
 
 protocol GalleryPresenterType: class {
-    
-    init(view: GalleryViewType, service: FlickrServiceType, workflow: MainWorkflowType)
-    
     func fetchPhotos(tags: String?)
     func presentPhoto(at indexPath: IndexPath)
     func sortPhotos(by type: GallerySortType, options: GallerySortOptions)
+    
+    func configure(cell: GalleryCollectionCell, for indexPath: IndexPath)
+    func numberOfCells() -> Int
 }
 
-class GalleryPresenter: NSObject {
+final class GalleryPresenter {
     fileprivate weak var view: GalleryViewType!
     fileprivate let service: FlickrServiceType
     fileprivate let workflow: MainWorkflowType
@@ -102,17 +102,12 @@ extension GalleryPresenter: GalleryPresenterType {
         
         view.presentPhotos()
     }
-}
-
-// MARK: UICollectionViewDataSource
-extension GalleryPresenter: UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return photos.count
+    
+    func configure(cell: GalleryCollectionCell, for indexPath: IndexPath) {
+        cell.configure(photo: photos[indexPath.item])
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: GalleryCollectionCell.identifier, for: indexPath) as? GalleryCollectionCell else { return UICollectionViewCell() }
-        cell.configure(photo: photos[indexPath.item])
-        return cell
+    func numberOfCells() -> Int {
+        return photos.count
     }
 }

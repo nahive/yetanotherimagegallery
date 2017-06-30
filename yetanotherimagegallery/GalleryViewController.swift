@@ -18,7 +18,7 @@ protocol GalleryViewType: ViewType {
     func hideIndicator()
 }
 
-class GalleryViewController: UIViewController {
+final class GalleryViewController: UIViewController {
     
     var presenter: GalleryPresenterType!
     
@@ -34,7 +34,7 @@ class GalleryViewController: UIViewController {
     fileprivate lazy var collectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
         collectionView.register(GalleryCollectionCell.self, forCellWithReuseIdentifier: GalleryCollectionCell.identifier)
-        collectionView.dataSource = (self.presenter as? UICollectionViewDataSource)
+        collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.backgroundColor = .groupTableViewBackground
         collectionView.contentInset = UIEdgeInsets(top: 44, left: 0, bottom: 0, right: 0)
@@ -181,6 +181,19 @@ extension GalleryViewController: UICollectionViewDelegateFlowLayout {
         view.endEditing(true)
     }
 }
+
+extension GalleryViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return presenter.numberOfCells()
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: GalleryCollectionCell.identifier, for: indexPath) as? GalleryCollectionCell else { return UICollectionViewCell() }
+        presenter.configure(cell: cell, for: indexPath)
+        return cell
+    }
+}
+
 
 // MARK: UISearchBarDelegate 
 extension GalleryViewController: UISearchBarDelegate {

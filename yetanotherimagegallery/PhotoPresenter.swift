@@ -19,7 +19,7 @@ protocol PhotoPresenterType: class {
 }
 
 // NSObject is needed as #selectors still depend on obj-c runtime :( 
-class PhotoPresenter: NSObject {
+final class PhotoPresenter: NSObject {
     fileprivate weak var view: PhotoViewType!
     fileprivate let workflow: MainWorkflowType
     

@@ -14,7 +14,7 @@ protocol PhotoViewType: ViewType {
     func present(message: String)
 }
 
-class PhotoViewController: UIViewController {
+final class PhotoViewController: UIViewController {
     
     var presenter: PhotoPresenterType!
     

@@ -13,7 +13,7 @@ import Swinject
 // the quantity of depencies is so small it serves
 // no purpose.
 
-class MainAssembly: AssemblyType {
+final class MainAssembly: AssemblyType {
     
     func assemble(container: Container) {
         container.register(MainWorkflowType.self) { _ in

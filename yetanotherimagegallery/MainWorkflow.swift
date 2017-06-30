@@ -15,7 +15,7 @@ protocol MainWorkflowType {
     func presentShare(sender: ViewType, activityItems: [Any], from view: UIView)
 }
 
-class MainWorkflow {
+final class MainWorkflow {
     fileprivate let container: Container
     
     init(container: Container) {
